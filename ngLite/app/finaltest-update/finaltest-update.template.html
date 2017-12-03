@@ -1,0 +1,58 @@
+'use strict';
+<div class='container-fluid'>
+<div class='col-md-2'>
+
+<p>
+    <a href='#!/finaltest/'>
+        <button>back</button>
+    </a>
+</p>
+</div>
+<div class='col-md-10'>
+
+    <div class='row' ng-repeat='field in fields track by $index'>
+        <div class='col-xs-12 col-sm-3 col-md-3 col-lg-3 '>
+            <div>
+                <label>id</label>
+            </div>
+            <input type='text' ng-model='field.id' ng-show='field.editable' placeholder='id'>
+            <span ng-hide='field.editable'>{{ field.id }}</span>
+        </div>
+        <div class='col-xs-12 col-sm-3 col-md-3 col-lg-3 '>
+            <div>
+                <label>fk</label>
+            </div>
+            <input type='text' ng-model='field.fk' ng-show='field.editable' placeholder='fk'>
+            <span ng-hide='field.editable'>{{ field.fk }}</span>
+        </div>
+        <div class='col-xs-12 col-sm-3 col-md-3 col-lg-3 '>
+            <div>
+                <label>name</label>
+            </div>
+            <input type='text' ng-model='field.name' ng-show='field.editable' placeholder='name'>
+            <span ng-hide='field.editable'>{{ field.name }}</span>
+        </div>
+        <div class='col-xs-12 col-sm-3 col-md-3 col-lg-3 '>
+            <div>
+                <label>description</label>
+            </div>
+            <input type='text' ng-model='field.description' ng-show='field.editable' placeholder='description'>
+            <span ng-hide='field.editable'>{{ field.description }}</span>
+        </div>
+        <div class='col-xs-12 col-sm-3 col-md-3 col-lg-3 '>
+            <div>
+                <label>type</label>
+            </div>
+            <input type='text' ng-model='field.type' ng-show='field.editable' placeholder='type'>
+            <span ng-hide='field.editable'>{{ field.type }}</span>
+        </div>
+        <div class='col-xs-12 col-sm-12 col-md-12 col-lg-12 '>
+            <div>
+                <label>Actions</label>
+            </div>
+            <span class='save-span' ng-click='save($index)' ng-show='field.editable'><button class='btn-save'>Save</button></span>
+            <span class='delete-span' ng-click='delete($index)' ng-show='field.editable'><button class='btn-delete'>Delete</button></span>
+        </div>
+    </div>
+</div>
+</div>

@@ -1,0 +1,31 @@
+<div class='container-fluid'>
+   <div class='col-md-2 col-xs-12'>
+    <!--Sidebar content-->
+     <p>
+         <a href='#!/finaltest-new/'><button>new</button></a>
+    </p>
+   <p>
+      Search:
+      <input ng-model='$ctrl.query' />
+    </p>
+    <p>
+      Sort by:
+     <select ng-model='$ctrl.orderProp'>
+       <option value='name'>Alphabetical</option>
+       <option value='ordering'>Newest</option>
+     </select>
+   </p>
+ </div>
+ <div class='col-md-10 col-xs-12'>
+   <!--Body content-->
+  <ul>
+    <li ng-repeat='obj in $ctrl.objects | filter:$ctrl.query | orderBy:$ctrl.orderProp'  class='thumbnail finaltest-list-item'>
+       <h3>{{obj.name}}</h3>
+      <p>{{obj.snippet}}</p>
+      <p>
+           <a href='#!/finaltest-update/{{obj.id}}'><button>update</button></a>  
+      </p>
+    </li>
+  </ul>
+</div>
+</div>
