@@ -13,63 +13,69 @@ if(isset($_GET) && isset($_GET['c']) && isset($_GET['m']) && $_GET['c'] == 'priv
   <head>
     <meta charset="utf-8">
 
-    <title>SOW</title>
-     
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">  
+    <title>ngLite</title>
 
-    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <link rel='stylesheet' type='text/css' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css'>
     <link rel="stylesheet" href="app.css" />
     <link rel="stylesheet" href="app.animations.css" />
- <script src="https://code.jquery.com/jquery-3.2.1.min.js"
+    <link rel='stylesheet' type='text/css' href='../css/style.css'>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"
                         integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
                         crossorigin="anonymous">
 		</script>
-    <script src="bower_components/jquery/dist/jquery.js"></script>
-    <script src="bower_components/angular/angular.js"></script>
-    <script src="bower_components/angular-animate/angular-animate.js"></script>
-    <script src="bower_components/angular-resource/angular-resource.js"></script>
-    <script src="bower_components/angular-route/angular-route.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular-animate.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-resource/1.6.7/angular-resource.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular-route.js"></script>
+
+
+
+    <!-- AOS: Animate on Scroll -->
+    <link href="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.css" rel="stylesheet">
+    <script src="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.js"></script>
 
     <script src="app.module.js"></script>
     <script src="app.config.js"></script>
     <script src="app.animations.js"></script>
-    
+
     <script src="core/core.module.js"></script>
     <script src="core/checkmark/checkmark.filter.js"></script>
-    
 
-    <script src='core/finaltest/finaltest-core.module.js'></script> 
-    <script src='core/finaltest/finaltest-core.service.js'></script> 
-     
-    <script src='finaltest-list/finaltest-list.module.js'></script> 
-    <script src='finaltest-list/finaltest-list.component.js'></script> 
-     
-    <script src='finaltest-new/finaltest-new.module.js'></script> 
-    <script src='finaltest-new/finaltest-new.component.js'></script> 
-     
-    <script src='finaltest-update/finaltest-update.module.js'></script> 
-    <script src='finaltest-update/finaltest-update.component.js'></script> 
- <!-- 
- Remember: 
+
+    <script src='core/finaltest/finaltest-core.module.js'></script>
+    <script src='core/finaltest/finaltest-core.service.js'></script>
+
+    <script src='finaltest-list/finaltest-list.module.js'></script>
+    <script src='finaltest-list/finaltest-list.component.js'></script>
+
+    <script src='finaltest-new/finaltest-new.module.js'></script>
+    <script src='finaltest-new/finaltest-new.component.js'></script>
+
+    <script src='finaltest-update/finaltest-update.module.js'></script>
+    <script src='finaltest-update/finaltest-update.component.js'></script>
+ <!--
+ Remember:
  0) { check API : make sure CREATE TABLE is commented out.  }
  1) { change root_dir in components update, new , and core
-  
- 4) { add to the core.module} 
+
+ 4) { add to the core.module}
  5) { add it to the menu }
  6) { redirect after creating a new record in component}
  7) { fix back buttons in views}
  8) { add final slash to redirect in new or update...
- 
+
  -->
 
-   
 
-<style> 
+
+<style>
 		    .dev-fixed-footer{position:fixed;bottom:0px;left:0px;height:100px;overflow-y:scroll;border:solid 1px #ccc;
 		</style>
 
   </head>
-  
+
 	<div class="dev-fixed-footer " style="width:100%;">
 	    <?php
 	        //Initial Properties
@@ -189,7 +195,7 @@ if(isset($_GET) && isset($_GET['c']) && isset($_GET['m']) && $_GET['c'] == 'priv
         										<li> <a id='public1' href='?c=public&m=public1'> public1 </a></li>
         										<li> <a id='public2' href='?c=public&m=public2'> public2 </a></li>
         										<li> <a id='public3' href='#!/finaltest'> finaltest </a></li>
-        										 
+
     										</ul>
 										</li>
 										<?php if($is_logged_in == true){ ?>
@@ -255,9 +261,9 @@ if(isset($_GET) && isset($_GET['c']) && isset($_GET['m']) && $_GET['c'] == 'priv
 		 <?php $heightOfNavigation = "65px"; ?>
     <div class="row" style="margin-top:<?php echo($heightOfNavigation); ?>;">
     <div class="view-container" >
-         
+
       <div ng-view class="view-frame"></div>
-       
+
     </div>
     <div style='display:none;' >
         <p>SOW created a CRUD app converted from the ANgularjs PhoneCat app.</p>
@@ -345,8 +351,8 @@ if(isset($_GET) && isset($_GET['c']) && isset($_GET['m']) && $_GET['c'] == 'priv
             <li>crud.php has 4 methods to adapt: add,update,add_details,update_details</li>
             <li>change both component and templates for both 'new/add' and 'update'  files.</li>
             <li>and of course the database has to change...</li>
-            
-            
+
+
         </ul>
         <p>After the 'fields' are updated in CRUD methods and their related templates and components...Refactor</p>
         <p>What code can be reduced or eliminated</p>
